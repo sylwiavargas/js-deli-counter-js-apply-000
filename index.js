@@ -2,12 +2,20 @@
 Currently serving Steven.
 */
 
-function takeANumber (line, customers) {
-  line.push(customers); //because test says "Welcome, Ada. You are number 1 in line." - it means that this customer is pushed towards the end of the line;
-  return (`Welcome, ${customers}. You are number ${line.length} in line.`);
+function takeANumber (line, customer) {
+  line.push(customer); //because test says "Welcome, Ada. You are number 1 in line." - it means that this customer is pushed towards the end of the line;
+  return (`Welcome, ${customer}. You are number ${line.length} in line.`);
 }
 
-var katzDeliLine
+var counter = 0;
+
+function takeANumberOld (line) {
+  counter++;
+  line.push(counter);
+  return counter;
+}
+
+var katzDeliLine;
 function nowServing (katzDeliLine) { //line is really the names - .length is the number
  if (katzDeliLine.length===0){
     return 'There is nobody waiting to be served!';
